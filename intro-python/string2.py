@@ -16,8 +16,13 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
+    if len(s) >= 3:
+        if s[-3:] == "ing":
+            s += "ly"
+        else:
+            s += "ing"
   # +++your code here+++
-  return
+    return s
 
 
 # E. not_bad
@@ -29,9 +34,13 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  # +++your code here+++
-  return
 
+    poz = s.find("not")
+    poz2 = s.find("bad")
+    if poz<poz2:
+        return s[:poz]+"good"+s[poz2+3:]
+
+    return s
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -41,8 +50,12 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  # +++your code here+++
-  return
+    
+    l1 = len(a)
+    l2 = len(b)
+    if l1%2 == 0:
+
+    return 
 
 
 # Simple provided test() function used in main() to print
